@@ -11,15 +11,18 @@ COLOR PALLETES
 body {
     background-color: #F8EDE3;
     color: #85586F;
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif;*/
 }
   
 .container {
-    max-width: 960px;
+    border-color: red;
+    border-style: dashed;
+    /*max-width: 960px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px;*/
 }
 
+/* Horizontal Rule styles */
 .hr-style-one {
     background-color: none;
     border-style: dotted none none;
@@ -35,12 +38,76 @@ body {
 }
   
 /* Header styles */
+/*
 header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 1rem;
     background-color: #DFD3C3;
-    padding: 20px 0;
+    border-color: red;
+    border-style: dashed;
 }
-  
-header h1 {
-    font-size: 2.5rem;
+
+.header-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-nav ul li {
+    display: inline;
+    padding: 0 1rem;
+}
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: #85586F;
+    cursor: pointer;
+}
+
+.header-nav ul li a:hover {
+    border-color: red;
+    border-style: dashed;
+}*/
+
+ /* Navbar styles */
+ .navbar {
+    border-color: red;
+    border-style: dashed;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+ }
+
+ .navbar ul {
+    border-color: red;
+    border-style: dashed;
+    list-style-type: none;
+    justify-content: center;
     margin: 0;
-}
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+ }
+
+ .navbar li {
+    display: inline-block;
+ }
+
+ .navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+ }
+
+ .navbar a:hover {
+    background-color: #111111;
+ }
+
+ .list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+ }
