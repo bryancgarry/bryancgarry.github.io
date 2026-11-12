@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrain Scene Graph | Bryan Garry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">&larr; All Projects</a>
+
+        <header class="project-header">
+            <p class="stage-num">03</p>
+            <h1>Terrain Scene Graph</h1>
+            <p class="tagline">An OpenGL scene graph renderer with culling, level of detail, fractal terrain, and a cinematic camera flythrough.</p>
+        </header>
+
+        <!-- TODO: replace with <video src="../media/terrain-scene/demo.mp4" controls muted playsinline></video> -->
+        <div class="hero-media placeholder">DEMO VIDEO<br>terrain-scene/demo.mp4</div>
+
+        <dl class="quick-facts">
+            <div><dt>ROLE</dt><dd>Solo developer</dd></div>
+            <div><dt>CONTEXT</dt><dd>JHU Applied Computer Graphics</dd></div>
+            <div><dt>TECH</dt><dd>C++, OpenGL</dd></div>
+            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (TODO)</a></dd></div>
+        </dl>
+
+        <h2>OVERVIEW</h2>
+        <p>TODO: a short paragraph on the scene and what the flythrough shows.</p>
+
+        <h2>TECHNICAL HIGHLIGHTS</h2>
+        <ul class="bullets">
+            <li>View frustum culling built from camera geometry vectors</li>
+            <li>LOD sphere nodes selected by distance thresholds</li>
+            <li>Diamond-Square fractal terrain with trees placed by elevation band</li>
+            <li>Catmull-Rom spline camera flythrough with a look-ahead fix across segments</li>
+        </ul>
+
+        <h2>CHALLENGES &amp; SOLUTIONS</h2>
+        <!-- TODO: expand with specifics -->
+        <p>The standard approach of extracting frustum planes from the projection-view matrix (Gribb-Hartmann) failed because the framework used a non-standard column-major accessor. I rebuilt the planes directly from the camera's position and basis vectors instead.</p>
+
+        <h2>GALLERY</h2>
+        <div class="gallery">
+            <div class="placeholder">SCREENSHOT 1</div>
+            <div class="placeholder">SCREENSHOT 2</div>
+            <div class="placeholder">SCREENSHOT 3</div>
+        </div>
+
+        <h2>WHAT'S NEXT</h2>
+        <p>TODO: what you'd add or improve next.</p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> BRYAN GARRY</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

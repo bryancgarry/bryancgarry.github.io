@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Planet Viewer | Bryan Garry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">&larr; All Projects</a>
+
+        <header class="project-header">
+            <p class="stage-num">01</p>
+            <h1>Procedural Planet Viewer</h1>
+            <p class="tagline">A real-time procedural planet with an atmosphere, oceans, clouds, an orbiting moon, and a flyable spacecraft.</p>
+        </header>
+
+        <!-- TODO: replace with <video src="../media/planet-viewer/demo.mp4" controls muted playsinline></video>
+             or a YouTube embed -->
+        <div class="hero-media placeholder">DEMO VIDEO<br>planet-viewer/demo.mp4</div>
+
+        <dl class="quick-facts">
+            <div><dt>ROLE</dt><dd>Solo developer</dd></div>
+            <div><dt>CONTEXT</dt><dd>JHU Applied Computer Graphics, final project</dd></div>
+            <div><dt>TECH</dt><dd>C++, OpenGL 4.1, GLSL, SDL3, macOS</dd></div>
+            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (TODO)</a></dd></div>
+        </dl>
+
+        <h2>OVERVIEW</h2>
+        <!-- TODO: edit into your own voice -->
+        <p>The planet is generated entirely on the GPU. An icosphere mesh is deformed in the vertex shader with layered noise to form terrain, then shaded with elevation-based colors and triplanar texturing. Around it sit an ocean layer, clouds, and atmospheric scattering. A moon orbits as a scene graph node, and the player can fly a spacecraft between the two bodies.</p>
+
+        <h2>TECHNICAL HIGHLIGHTS</h2>
+        <ul class="bullets">
+            <li>Vertex-shader terrain displacement using noise on an icosphere</li>
+            <li>Procedural elevation-based coloring with triplanar texture mapping</li>
+            <li>Atmospheric scattering, ocean, and cloud layers</li>
+            <li>Orbiting moon built as a scene graph node</li>
+            <li>Flyable spacecraft with sphere-of-influence gravity per body and bounding-sphere collision</li>
+        </ul>
+
+        <h2>CHALLENGES &amp; SOLUTIONS</h2>
+        <!-- TODO: expand with specifics -->
+        <p>I first tried GPU transform feedback so collisions would follow the shader-displaced terrain, but it proved unstable. I replaced it with bounding-sphere collision, which was simpler and reliable, and let me spend the time on the visuals and flight model.</p>
+
+        <h2>GALLERY</h2>
+        <div class="gallery">
+            <div class="placeholder">SCREENSHOT 1</div>
+            <div class="placeholder">SCREENSHOT 2</div>
+            <div class="placeholder">SCREENSHOT 3</div>
+        </div>
+
+        <h2>WHAT'S NEXT</h2>
+        <p>TODO: what you'd add or improve next.</p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> BRYAN GARRY</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
