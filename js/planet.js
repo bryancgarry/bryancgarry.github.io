@@ -18,10 +18,10 @@ const float R = 0.5;          // planet radius (canvas spans -1..1)
 const float TILT = 0.32;      // screen tilt of the ring and the planet's axis
 const float RING_FLAT = 0.22; // how flattened the ring ellipse looks
 
-const vec3 ORANGE = vec3(0.996, 0.498, 0.176);
-const vec3 DARK   = vec3(0.55, 0.24, 0.09);
-const vec3 LIGHT  = vec3(1.0, 0.75, 0.55);
-const vec3 SLATE  = vec3(0.137, 0.239, 0.302);
+const vec3 CRIMSON = vec3(0.663, 0.114, 0.227);
+const vec3 DARK    = vec3(0.25, 0.04, 0.09);
+const vec3 LIGHT   = vec3(0.95, 0.60, 0.68);
+const vec3 GRAY    = vec3(0.133, 0.133, 0.133);
 
 mat2 rot(float a) {
     float c = cos(a), s = sin(a);
@@ -65,7 +65,7 @@ void main() {
 
     // Atmosphere glow outside the planet
     float glow = exp(-max(r - R, 0.0) * 9.0) * 0.45;
-    col += ORANGE * glow;
+    col += CRIMSON * glow;
     alpha += glow;
 
     // Ring: an ellipse in tilted screen space, with fine bands and one gap
@@ -74,7 +74,7 @@ void main() {
     float ringMask = smoothstep(0.68, 0.70, ringR) * (1.0 - smoothstep(0.93, 0.95, ringR));
     float ringGap = 1.0 - 0.8 * smoothstep(0.80, 0.805, ringR) * (1.0 - smoothstep(0.83, 0.835, ringR));
     float ringA = ringMask * ringGap * (0.55 + 0.45 * sin(ringR * 90.0)) * 0.75;
-    vec3 ringCol = mix(ORANGE, LIGHT, 0.3);
+    vec3 ringCol = mix(CRIMSON, LIGHT, 0.3);
 
     // Back half of the ring goes behind the planet
     if (q.y > 0.0) {
@@ -93,13 +93,13 @@ void main() {
 
         float turb = fbm(m * 3.0 + vec3(0.0, 0.0, uTime * 0.02));
         float bands = 0.6 * sin(m.y * 9.0 + turb * 3.0) + 0.4 * sin(m.y * 23.0 + turb * 5.0);
-        vec3 surf = mix(DARK, ORANGE, smoothstep(-0.9, 0.9, bands));
-        surf = mix(surf, LIGHT, smoothstep(0.5, 0.85, fbm(m * 8.0)) * 0.4);
-        surf = mix(surf, SLATE, smoothstep(0.4, 1.0, -bands) * 0.3);
+        vec3 surf = mix(DARK, CRIMSON, smoothstep(-0.9, 0.9, bands));
+        surf = mix(surf, LIGHT, smoothstep(0.45, 0.85, fbm(m * 8.0)) * 0.6);
+        surf = mix(surf, GRAY, smoothstep(0.4, 1.0, -bands) * 0.3);
 
         float shade = smoothstep(-0.15, 0.6, dot(n, normalize(vec3(-0.6, 0.5, 0.7))));
         float rim = pow(1.0 - n.z, 3.0);
-        vec3 lit = surf * (0.08 + 0.95 * shade) + ORANGE * rim * (0.15 + 0.6 * shade);
+        vec3 lit = surf * (0.08 + 0.95 * shade) + CRIMSON * rim * (0.15 + 0.6 * shade);
 
         float edge = smoothstep(R, R - 0.006, r);
         col = mix(col, lit, edge);

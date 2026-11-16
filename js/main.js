@@ -15,7 +15,7 @@ if (toggle) {
 // Pixel starfield background
 const canvas = document.getElementById("starfield");
 const ctx = canvas.getContext("2d");
-const colors = ["#EAECF0", "#EAECF0", "#EAECF0", "#9DB0BD", "#FE7F2D"];
+const colors = ["#EEEEEE", "#EEEEEE", "#EEEEEE", "#C73659", "#A91D3A"];
 let stars = [];
 
 function resize() {
