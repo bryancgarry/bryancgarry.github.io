@@ -385,6 +385,14 @@ h1, h2, h3, .btn, .nav, .stage-num, .quest-date, .tags, .inv-slots, .footer {
     color: var(--highlight);
 }
 
+.quest-org + p {
+    margin-top: 0.3rem;
+}
+
+.quest p + p {
+    margin-top: 0.4rem;
+}
+
 .quest-points {
     margin-top: 0.6rem;
     padding-left: 1.2rem;
