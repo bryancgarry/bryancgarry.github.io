@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Game Engine | Bryan Garry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">&larr; All Projects</a>
+
+        <header class="project-header">
+            <p class="stage-num">05</p>
+            <h1>2D Game Engine</h1>
+            <p class="tagline">A cross-platform 2D game engine written from scratch in C++, used to build Untitled Card Game, a pixel art card battler.</p>
+        </header>
+
+        <img class="hero-media" src="../images/projects/2d-game-engine.jpg" alt="Title menu, battle board, and card collection screens from Untitled Card Game">
+
+        <dl class="quick-facts">
+            <div><dt>ROLE</dt><dd>Solo developer</dd></div>
+            <div><dt>CONTEXT</dt><dd>JHU Computer Gaming Engines (Spring 2025)</dd></div>
+            <div><dt>TECH</dt><dd>C++, SDL3, FMOD, CMake</dd></div>
+            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (coming soon)</a></dd></div>
+        </dl>
+
+        <h2>OVERVIEW</h2>
+        <p>Instead of using an off-the-shelf engine, I built the core systems a 2D game needs myself, then used them to make a complete game. Untitled Card Game is a turn-based pixel art card battler where you face an opponent in tactical matches and can browse the cards in your deck.</p>
+
+        <h2>ENGINE SYSTEMS</h2>
+        <ul class="bullets">
+            <li><strong>Game loop:</strong> a real-time loop that updates and draws every frame.</li>
+            <li><strong>Rendering and animation:</strong> sprite drawing, sprite animation, and scrolling backgrounds using SDL3.</li>
+            <li><strong>Input:</strong> mouse clicks for menus, drag-and-drop for playing cards, mouse wheel scrolling on the collection page, and keyboard shortcuts to pause (P), return to the menu (B), or quit (Esc).</li>
+            <li><strong>Collision:</strong> collision detection between game objects.</li>
+            <li><strong>Audio:</strong> audio playback and feedback through FMOD.</li>
+            <li><strong>Persistence:</strong> a saved game state that keeps both players' hands and point totals, so a match can be continued later.</li>
+            <li><strong>Data-driven setup:</strong> a game config file defines each player's starting hand.</li>
+            <li><strong>Build:</strong> a CMake build so the engine compiles across platforms.</li>
+        </ul>
+
+        <h2>THE GAME</h2>
+        <p>Each round, the player and the opponent both choose a card to play. Once both are locked in, the cards battle and the higher attack score wins the round. The first to win three rounds wins the match.</p>
+        <p>The game draws on card games I love, including Balatro, Inscryption, Gwent from The Witcher, Hearthstone, Pok&eacute;mon TCG Pocket, and Super Auto Pets.</p>
+
+        <h2>GALLERY</h2>
+        <div class="gallery gallery-natural">
+            <figure>
+                <img src="../images/projects/2d-game-engine-menu.jpg" alt="Title menu with New Game, Continue, and Collection options">
+                <figcaption>Title menu</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/projects/2d-game-engine-board.png" alt="Battle board with player and opponent hands">
+                <figcaption>Battle board</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/projects/2d-game-engine-collection.png" alt="Shape Deck collection screen">
+                <figcaption>Deck collection</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/projects/2d-game-engine-win.png" alt="You Win screen with Play Again and Quit">
+                <figcaption>Victory screen</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> BRYAN GARRY</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

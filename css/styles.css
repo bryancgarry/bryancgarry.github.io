@@ -481,6 +481,44 @@ h1, h2, h3, .btn, .nav, .stage-num, .quest-date, .tags, .inv-slots, .footer {
     margin-bottom: 2rem;
 }
 
+/* Title panel shown until a project has a screenshot */
+.media-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    background:
+        repeating-linear-gradient(to bottom, rgba(169, 29, 58, 0.18) 0 3px, transparent 3px 9px),
+        radial-gradient(circle at 70% 30%, rgba(199, 54, 89, 0.35), var(--panel) 70%);
+}
+
+.media-fallback span {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--highlight);
+}
+
+/* Embedded demo videos */
+.video-embed {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+    background: var(--panel);
+}
+
+/* Screenshots keep their own shape instead of the 16:9 placeholder box */
+img.hero-media {
+    display: block;
+    aspect-ratio: auto;
+    height: auto;
+}
+
 .quick-facts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -507,6 +545,14 @@ h1, h2, h3, .btn, .nav, .stage-num, .quest-date, .tags, .inv-slots, .footer {
     margin: 2.5rem 0 1rem;
 }
 
+.project-page code {
+    color: var(--highlight);
+}
+
+.project-page p + p {
+    margin-top: 1rem;
+}
+
 .project-page ul.bullets {
     padding-left: 1.4rem;
 }
@@ -524,6 +570,36 @@ h1, h2, h3, .btn, .nav, .stage-num, .quest-date, .tags, .inv-slots, .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* For screenshots that aren't widescreen, like portrait game screens */
+.gallery-natural {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: start;
+}
+
+.gallery-natural img {
+    aspect-ratio: auto;
+    height: auto;
+    background: var(--panel);
+}
+
+.gallery figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--muted);
 }
 
 .gallery .placeholder {

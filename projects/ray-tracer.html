@@ -16,45 +16,39 @@
         <a href="../index.html#projects" class="back-link">&larr; All Projects</a>
 
         <header class="project-header">
-            <p class="stage-num">02</p>
+            <p class="stage-num">03</p>
             <h1>Ray Tracer</h1>
-            <p class="tagline">A CPU ray tracer built from scratch in C++, featuring physically based shading.</p>
+            <p class="tagline">A recursive ray tracer built on top of a scene graph framework, rendering a marble room full of reflective and refractive gems.</p>
         </header>
 
-        <!-- TODO: replace with <img src="../media/ray-tracer/hero.png" alt="..."> -->
-        <div class="hero-media placeholder">HERO RENDER<br>ray-tracer/hero.png</div>
+        <img class="hero-media" src="../images/projects/ray-tracer.jpg" alt="Ray traced room with glass gem spheres on a checkerboard floor">
 
         <dl class="quick-facts">
             <div><dt>ROLE</dt><dd>Solo developer</dd></div>
-            <div><dt>CONTEXT</dt><dd>JHU Applied Computer Graphics</dd></div>
+            <div><dt>CONTEXT</dt><dd>JHU Applied Computer Graphics, Project 1 (Spring 2026)</dd></div>
             <div><dt>TECH</dt><dd>C++</dd></div>
-            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (TODO)</a></dd></div>
+            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (coming soon)</a></dd></div>
         </dl>
 
         <h2>OVERVIEW</h2>
-        <p>TODO: a short paragraph on what the ray tracer does and what a render looks like.</p>
+        <p>Rather than starting from scratch, I extended my scene graph framework from the previous course with ray intersection and shading. The scene is a room with a checkerboard floor, colored marble walls, a large ellipsoid mirror on the back wall, two image-textured pillars, a pair of diamonds and a torus, and three gem spheres modeled on the reflective and refractive properties of ruby, sapphire, and emerald.</p>
 
         <h2>TECHNICAL HIGHLIGHTS</h2>
         <ul class="bullets">
-            <li>Blinn-Phong and Cook-Torrance BRDF shading</li>
-            <li>Shadow rays, recursive reflection and refraction</li>
-            <li>Triangle mesh intersection with M&ouml;ller&ndash;Trumbore, accelerated by AABB bounding volumes</li>
-            <li>Quadric ellipsoid surfaces and procedural checkerboard textures</li>
+            <li><strong>Recursive tracing:</strong> reflection and refraction rays are traced up to a maximum depth, with adaptive termination once a ray's contribution falls below a threshold.</li>
+            <li><strong>Scene graph traversal:</strong> rays walk the same scene graph used for rasterization, carrying matrix, material, and texture state down the tree.</li>
+            <li><strong>Analytic intersection:</strong> spheres, quads, ellipsoids, and finite cylinders, with rays transformed into each object's local space through its inverse modeling matrix.</li>
+            <li><strong>Triangle meshes:</strong> M&ouml;ller&ndash;Trumbore ray/triangle intersection, tested against a local bounding box first.</li>
+            <li><strong>Bounding hierarchy:</strong> AABB nodes group objects so rays that miss a group skip all of its children.</li>
+            <li><strong>Lighting:</strong> Phong shading with shadow rays, refraction via Snell's law, and two colored lights for tinted shadows and highlights.</li>
+            <li><strong>Textures:</strong> UV image texturing on the pillars, plus procedural checkerboard and Perlin noise marble textures.</li>
         </ul>
 
         <h2>CHALLENGES &amp; SOLUTIONS</h2>
-        <!-- TODO: expand with specifics -->
-        <p>Debugging included fixing reversed refraction entry/exit logic, a negative-modulo bug in the checkerboard texture, and salt-and-pepper artifacts caused by incorrect scaling in the ray-triangle intersection math.</p>
-
-        <h2>GALLERY</h2>
-        <div class="gallery">
-            <div class="placeholder">RENDER 1</div>
-            <div class="placeholder">RENDER 2</div>
-            <div class="placeholder">RENDER 3</div>
-        </div>
+        <p>Triangle meshes showed speckled shading artifacts ("acne"). Offsetting reflection and refraction rays by a small epsilon reduced self-intersection, and I narrowed the remaining issue down to the triangle intersection math.</p>
 
         <h2>WHAT'S NEXT</h2>
-        <p>TODO: what you'd add or improve next.</p>
+        <p>Fully resolving the triangle mesh artifacts, and building the bounding hierarchy automatically instead of by hand.</p>
     </main>
 
     <footer class="footer">

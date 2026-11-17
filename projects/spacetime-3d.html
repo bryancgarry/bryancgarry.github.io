@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceTime 3D | Bryan Garry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+
+    <main class="project-page">
+        <a href="../index.html#projects" class="back-link">&larr; All Projects</a>
+
+        <header class="project-header">
+            <p class="stage-num">04</p>
+            <h1>SpaceTime 3D</h1>
+            <p class="tagline">A 3D solar system where a wireframe spacetime grid sinks beneath each planet based on its mass, visualizing how gravity bends space.</p>
+        </header>
+
+        <img class="hero-media" src="../images/projects/spacetime-3d-grid.jpg" alt="Sun and planets sinking into a wireframe spacetime grid">
+
+        <dl class="quick-facts">
+            <div><dt>ROLE</dt><dd>Solo developer</dd></div>
+            <div><dt>CONTEXT</dt><dd>JHU Computer Graphics, final project (Fall 2025)</dd></div>
+            <div><dt>TECH</dt><dd>C++, OpenGL, GLSL, SDL3</dd></div>
+            <div><dt>SOURCE</dt><dd><a href="#TODO-repo">GitHub (coming soon)</a></dd></div>
+        </dl>
+
+        <h2>OVERVIEW</h2>
+        <p>Inspired by the classic rubber-sheet gravity demonstration and by Kerbal Space Program, this project renders a solar system above a wireframe grid that sinks beneath each body. Heavier bodies carve deeper wells, and the planets move along curved orbital paths, so the grid reshapes itself as they travel.</p>
+
+        <h2>TECHNICAL HIGHLIGHTS</h2>
+        <ul class="bullets">
+            <li><strong>Spacetime grid:</strong> an extruded surface of interconnected vertices drawn with <code>GL_LINES</code>. Each vertex is displaced using every body's mass with <code>F = G&middot;M / r&sup2;</code>, and the positions are recomputed every draw call.</li>
+            <li><strong>Multi-texture planets:</strong> extra textures are passed to the shader as <code>sampler2D</code> uniforms. Day and night maps are blended from the sun's position and each fragment's normal, a cloud map is layered over the terrain, and the final color is boosted so the night side stays readable.</li>
+            <li><strong>Skybox:</strong> a cubemap cube centered on the camera. The vertex shader sets <code>gl_Position = pos.xyww</code> so its depth is always at the far plane and it draws behind everything else.</li>
+            <li><strong>Animation:</strong> planets travel along curved paths, all organized in a custom scene graph.</li>
+        </ul>
+
+        <h2>GALLERY</h2>
+        <div class="gallery">
+            <figure>
+                <img src="../images/projects/spacetime-3d-overview.jpg" alt="Wide view of the solar system above the spacetime grid">
+                <figcaption>The full system and its gravity wells</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/projects/spacetime-3d-earth.jpg" alt="Earth with day and night textures and cloud overlay">
+                <figcaption>Day/night blending with a cloud layer</figcaption>
+            </figure>
+            <figure>
+                <img src="../images/projects/spacetime-3d-neptune.jpg" alt="Neptune resting in its well against the starfield skybox">
+                <figcaption>Neptune in its well, with the skybox behind</figcaption>
+            </figure>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> BRYAN GARRY</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

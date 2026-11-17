@@ -57,45 +57,82 @@
             <div class="project-grid">
 
                 <article class="project-card">
-                    <!-- TODO: replace placeholder with:
-                         <video src="media/planet-viewer/loop.mp4" autoplay muted loop playsinline></video> -->
-                    <div class="media placeholder">VIDEO LOOP<br>planet-viewer/loop.mp4</div>
+                    <!-- Swap for a looping clip later: <video class="media" src="..." autoplay muted loop playsinline></video> -->
+                    <img class="media" src="images/projects/planet-viewer.jpg" alt="Procedural planet with clouds and atmosphere next to an orbiting moon">
                     <div class="project-body">
                         <p class="stage-num">01</p>
                         <h3>Procedural Planet Viewer</h3>
-                        <p>A procedurally generated planet with an atmosphere, oceans, clouds, an orbiting moon, and a spacecraft you can fly with real orbital gravity.</p>
+                        <p>A procedural planet with vertex-shader terrain, drifting clouds, a ray-marched atmosphere, an orbiting moon, and a flyable spacecraft pulled by each body's gravity.</p>
                         <ul class="tags">
-                            <li>C++</li><li>OpenGL 4.1</li><li>GLSL</li><li>SDL3</li>
+                            <li>C++</li><li>OpenGL</li><li>GLSL</li><li>SDL3</li>
                         </ul>
                         <a href="projects/planet-viewer.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <!-- TODO: replace placeholder with image or video -->
-                    <div class="media placeholder">RENDER IMAGE<br>ray-tracer/hero.png</div>
+                    <img class="media" src="images/projects/terrain-scene.jpg" alt="Fractal terrain with trees, city clusters, and ocean at sunset">
                     <div class="project-body">
                         <p class="stage-num">02</p>
-                        <h3>Ray Tracer</h3>
-                        <p>A CPU ray tracer written from scratch, with Cook-Torrance shading, reflection and refraction, triangle meshes, and quadric surfaces.</p>
+                        <h3>Procedural Terrain Fly-Through</h3>
+                        <p>A fractal landscape with level-of-detail trees, hierarchical view frustum culling, and a camera that flies a Catmull-Rom spline path.</p>
                         <ul class="tags">
-                            <li>C++</li><li>Rendering</li><li>BRDFs</li>
+                            <li>C++</li><li>OpenGL</li><li>GLSL</li><li>SDL3</li>
+                        </ul>
+                        <a href="projects/terrain-scene.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="media" src="images/projects/ray-tracer.jpg" alt="Ray traced room with glass gem spheres on a checkerboard floor">
+                    <div class="project-body">
+                        <p class="stage-num">03</p>
+                        <h3>Ray Tracer</h3>
+                        <p>A recursive ray tracer with reflection, refraction, shadow rays, quadric and triangle mesh intersection, and procedural textures.</p>
+                        <ul class="tags">
+                            <li>C++</li><li>Ray Tracing</li><li>Procedural Textures</li>
                         </ul>
                         <a href="projects/ray-tracer.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
                     </div>
                 </article>
 
                 <article class="project-card">
-                    <!-- TODO: replace placeholder with video -->
-                    <div class="media placeholder">VIDEO LOOP<br>terrain-scene/loop.mp4</div>
+                    <img class="media" src="images/projects/spacetime-3d-grid.jpg" alt="Sun and planets sinking into a wireframe spacetime grid">
                     <div class="project-body">
-                        <p class="stage-num">03</p>
-                        <h3>Terrain Scene Graph</h3>
-                        <p>A scene graph renderer with frustum culling, level of detail, fractal terrain, and a spline-driven camera flythrough.</p>
+                        <p class="stage-num">04</p>
+                        <h3>SpaceTime 3D</h3>
+                        <p>A 3D solar system where a wireframe spacetime grid sinks beneath each planet based on its mass, with day/night textured planets and a skybox.</p>
                         <ul class="tags">
-                            <li>C++</li><li>OpenGL</li><li>Scene Graphs</li>
+                            <li>C++</li><li>OpenGL</li><li>GLSL</li><li>SDL3</li>
                         </ul>
-                        <a href="projects/terrain-scene.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
+                        <a href="projects/spacetime-3d.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <img class="media" src="images/projects/2d-game-engine.jpg" alt="Title menu, battle board, and card collection screens from Untitled Card Game">
+                    <div class="project-body">
+                        <p class="stage-num">05</p>
+                        <h3>2D Game Engine</h3>
+                        <p>A cross-platform 2D engine written from scratch, with rendering, animation, input, collision, audio, and save systems, used to build a pixel art card battler.</p>
+                        <ul class="tags">
+                            <li>C++</li><li>SDL3</li><li>FMOD</li><li>CMake</li>
+                        </ul>
+                        <a href="projects/2d-game-engine.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <!-- Replace with a screenshot: <img class="media" src="images/projects/clue-less.jpg" alt="..."> -->
+                    <div class="media media-fallback"><span>Clue-less</span></div>
+                    <div class="project-body">
+                        <p class="stage-num">06</p>
+                        <h3>Clue-less</h3>
+                        <p>A networked multiplayer take on Clue, built by a team of five with separate networking, game logic, and user interface subsystems.</p>
+                        <ul class="tags">
+                            <li>Python</li><li>Pygame</li><li>Networking</li><li>Team Project</li>
+                        </ul>
+                        <a href="projects/clue-less.html" class="btn btn-small">VIEW PROJECT &#9654;</a>
                     </div>
                 </article>
 
@@ -185,11 +222,10 @@
             <h2 class="section-title">Contact</h2>
             <p class="contact-blurb">Hiring for graphics, engine, or gameplay roles? I'd love to hear from you.</p>
             <div class="contact-links">
-                <!-- TODO: fill in real links -->
-                <a href="mailto:TODO@example.com" class="btn">EMAIL</a>
+                <a href="mailto:bryan.c.garry@outlook.com" class="btn">EMAIL</a>
                 <a href="https://github.com/bryancgarry" class="btn" target="_blank" rel="noopener">GITHUB</a>
-                <a href="#TODO-linkedin" class="btn">LINKEDIN</a>
-                <a href="#TODO-resume" class="btn btn-start">R&Eacute;SUM&Eacute;</a>
+                <a href="https://www.linkedin.com/in/bryan-garry/" class="btn" target="_blank" rel="noopener">LINKEDIN</a>
+                <a href="Resume_BryanGarry.pdf" class="btn btn-start" target="_blank" rel="noopener">R&Eacute;SUM&Eacute;</a>
             </div>
         </section>
     </main>
