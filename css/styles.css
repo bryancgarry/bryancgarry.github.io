@@ -385,6 +385,20 @@ h1, h2, h3, .btn, .nav, .stage-num, .quest-date, .tags, .inv-slots, .footer {
     color: var(--highlight);
 }
 
+.quest-points {
+    margin-top: 0.6rem;
+    padding-left: 1.2rem;
+}
+
+.quest-points li {
+    margin-bottom: 0.4rem;
+}
+
+.quest-points li::marker {
+    content: "\25B8  ";
+    color: var(--accent);
+}
+
 /* ---------- Skills ---------- */
 .inventory {
     display: grid;
